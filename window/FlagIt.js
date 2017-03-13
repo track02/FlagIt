@@ -269,8 +269,8 @@ if(initial_load){
 		  for (j = 0; j < 5; j++){
 			  
 			  newCell = newRow.insertCell(j);
-			  console.log("<img src='/flags/" + country_data[i + j].Code  + ".png'/>");
-			  newCell.innerHTML = "<img src='/flags/" + country_data[i + j].Code + ".png' />";
+			  console.log("<img src='/flags/" + country_data[i + j].Code.toLowerCase()  + ".png'/>");
+			  newCell.innerHTML = "<img src='/flags/" + country_data[i + j].Code.toLowerCase() + ".png' title=" + country_data[i+j].Name + " />";
 			  
 			  
 		  }	  

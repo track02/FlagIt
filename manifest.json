@@ -19,6 +19,6 @@
     "default_icon": "icons/flag-icon.svg",
     "default_title": "FlagIt",
     "default_popup": "window/FlagIt.html"
-  },
+  }
 
 }
