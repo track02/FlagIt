@@ -1,0 +1,24 @@
+{
+
+  "manifest_version": 2,
+  "name": "FlagIt",
+  "version": "0.1",
+
+  "description": "Flag Checklist",
+
+  "icons": {
+    "48": "icons/flag-icon.svg",
+    "96": "icons/flag-icon.svg"
+  },
+
+  "permissions": [
+      "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/flag-icon.svg",
+    "default_title": "FlagIt",
+    "default_popup": "window/FlagIt.html"
+  },
+
+}
