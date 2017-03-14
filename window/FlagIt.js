@@ -10,7 +10,7 @@ function setup(results_obj) {
   if(isEmpty(results_obj)){
     console.log("No results array");
     let set = browser.storage.local.set({results: new Array(250).fill(0)});
-    set.then(addItem, onError);
+    set.then(addItem, error);
   }
 
   //Otherwise we have a results object, start processing
