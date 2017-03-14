@@ -4,7 +4,7 @@
 A simple browser-addon checklist for flag collectors.
 
 
-##TODO
+##TODO##
 
 Grey out flags that haven't been found, add a tag when generating the
 table and use CSS to adjust transparency.
@@ -20,7 +20,7 @@ this would allow larger flag images to be used on each page or breaking
 up the page into alphabetical sections.
 
 
-##Notes/Other
+##Notes/Other##
 
 Current flag icons from http://icondrawer.com/free.php.
 
