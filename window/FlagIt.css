@@ -2,9 +2,8 @@ body{
   overflow-y:scroll;
 }
 
-
 .missing {
-  opacity: 0.5;
+  opacity: 0.20;
 }
 
 .found{

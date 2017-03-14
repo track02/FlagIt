@@ -12,20 +12,22 @@ import json
 with open('country_data.json') as country_json_data:
          country_data = json.load(country_json_data)
 
-print(country_data[0]["Code"])
 
 #Write table to a html file
 with open('table_gen.html', "w+") as table_html:
-    table_html.write("<table id='flag-table'>\n")
+
+    table_html.write("<table id=\"flag-table\">\n")
     #Cell counter, after 5 cells create a new row
     counter = 1
+    #Each image will be assigned a value, 1-248 used to help populate missing/found string
+    total = 1
 
     #Generate table
     for country in country_data:
 
         #Check for apostrophes and escape
         if "\'" in country["Name"]:
-            country["Name"] = country["Name"].replace("'", "\'")
+            country["Name"] = country["Name"].replace("'", "\'") #Read up on escaping single quotes - tooltip not showing in FF
 
 
         if(counter == 1):
@@ -40,7 +42,9 @@ with open('table_gen.html', "w+") as table_html:
         html_string +=  "\">"
 
         #Inner img
-        html_string += "<img src=\"/flags/"
+        html_string += "<img id=\""
+        html_string += str(total)
+        html_string += "\" src=\"/flags/"
         html_string += country["Code"]
         html_string += ".png\" "
         html_string += "title=\""
@@ -58,5 +62,6 @@ with open('table_gen.html', "w+") as table_html:
             counter = 0
 
         counter+=1
+        total+=1
 
     table_html.write("</table>")
