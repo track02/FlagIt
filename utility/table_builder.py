@@ -9,7 +9,7 @@ import json
 
 #Open the JSON file and convert it to a list of dictionariest
 #One dict for each country, with keys "Name" "Code"
-with open('country_data.json') as country_json_data:
+with open("country_data.json", mode='r', encoding='iso-8859-1') as country_json_data:
          country_data = json.load(country_json_data)
 
 
@@ -57,7 +57,7 @@ with open('table_gen.html', "w+") as table_html:
         #Write to file
         table_html.write(html_string)
 
-        if(counter > 5 or country == country_data[-1]):
+        if(counter > 15  or country == country_data[-1]):
             table_html.write("</tr>\n")
             counter = 0
 
