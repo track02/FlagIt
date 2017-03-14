@@ -24,3 +24,4 @@ up the page into alphabetical sections.
 
 Current flag icons from http://icondrawer.com/free.php.
 
+Polyfill library added for Chrome support: https://github.com/mozilla/webextension-polyfill
