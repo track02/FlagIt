@@ -7,8 +7,8 @@
   "description": "Flag Checklist",
 
   "icons": {
-    "48": "icons/flag-icon.svg",
-    "96": "icons/flag-icon.svg"
+    "24": "icons/flag-icon-24.png",
+	"48": "icons/flag-icon-48.png"
   },
 
   "permissions": [
@@ -17,7 +17,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/flag-icon.svg",
+    "default_icon": "icons/flag-icon-48.png",
     "default_title": "FlagIt",
     "default_popup": "window/FlagIt.html"
   }
