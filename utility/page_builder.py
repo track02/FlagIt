@@ -7,16 +7,34 @@
 
 import json
 
+#Vars
+cells_per_row = 19;
+
+
 #Open the JSON file and convert it to a list of dictionariest
 #One dict for each country, with keys "Name" "Code"
-with open("country_data.json", mode='r', encoding='iso-8859-1') as country_json_data:
+with open("country_data.json", mode='r', encoding='utf-8') as country_json_data:
          country_data = json.load(country_json_data)
 
 
-#Write table to a html file
-with open('table_gen.html', "w+") as table_html:
+#Write to html file
+with open('FlagIt.html', mode="w+", encoding="utf-8") as html_page:
 
-    table_html.write("<table id=\"flag-table\">\n")
+    #Doc
+    html_page.write("<!DOCTYPE html>\n")
+
+    #Head
+    html_page.write("<html>\n")
+    html_page.write("\t<head>\n")
+    html_page.write("\t\t<meta charset=\"UTF-8\">\n")
+    html_page.write("\t\t<link rel=\"stylesheet\" href=\"FlagIt.css\"/>\n")
+    html_page.write("\t\t<script type=\"application/javascript\" src=\"browser-polyfill.js\"></script>\n")
+    html_page.write("\t</head>\n\n")
+
+    #Body start
+    html_page.write("\t<body>\n\n")
+
+    html_page.write("\t\t<table id=\"flag-table\">\n")
     #Cell counter, after 5 cells create a new row
     counter = 1
     #Each image will be assigned a value, 1-248 used to help populate missing/found string
@@ -31,13 +49,13 @@ with open('table_gen.html', "w+") as table_html:
 
 
         if(counter == 1):
-            table_html.write("<tr>\n")
+            html_page.write("\t\t\t<tr>\n")
 
         #Build html string
 
         #Setup opening <td> and class / id
         #Look into stringbuilder equivalent for python
-        html_string  =  "<td class=\"missing\" id=\""
+        html_string  =  "\t\t\t\t\t<td class=\"missing\" id=\""
         html_string +=  country["Code"]
         html_string +=  "\">"
 
@@ -55,13 +73,25 @@ with open('table_gen.html', "w+") as table_html:
         html_string += "</td>\n"
 
         #Write to file
-        table_html.write(html_string)
+        html_page.write(html_string)
 
-        if(counter > 15  or country == country_data[-1]):
-            table_html.write("</tr>\n")
+        if(counter > cells_per_row  or country == country_data[-1]):
+            html_page.write("\t\t\t</tr>\n")
             counter = 0
 
         counter+=1
         total+=1
 
-    table_html.write("</table>")
+    html_page.write("\t\t</table>\n\n")
+
+    #Hover text
+    html_page.write("<p id=\"hover_text\"> </p>")
+
+    #Setup script - for handlers
+    html_page.write("\t\t<script type=\"text/javascript\" src=\"FlagIt.js\"></script>\n\n")
+
+    #Body end
+    html_page.write("\t</body>\n\n")
+
+    #Page end
+    html_page.write("</html>")

@@ -1,5 +1,21 @@
 body{
-  overflow-y:scroll;
+  overflow-y:auto;
+}
+
+img{
+  z-index:5;
+  border: 1px solid white;
+}
+
+img:hover {
+  border: 1px solid #CFEEF6; o
+}
+
+p{
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  font-family: monospace;
 }
 
 .missing {

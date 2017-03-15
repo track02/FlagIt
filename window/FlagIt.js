@@ -9,8 +9,10 @@ function setup(results_obj) {
   //If no results string is present - add a new one
   if(isEmpty(results_obj)){
     console.log("No results array");
-    let set = browser.storage.local.set({results: new Array(250).fill(0)});
+    var blank_array = new Array(300).fill(0);
+    let set = browser.storage.local.set({results: blank_array});
     set.then(addItem, error);
+    bindHandlers(blank_array);
   }
 
   //Otherwise we have a results object, start processing
@@ -18,46 +20,58 @@ function setup(results_obj) {
 
     //Pull out array from results_obj
     results_array = results_obj.results;
+    bindHandlers(results_array);
 
-    //Extract table and cells
-    var flag_table = document.getElementById("flag-table");
-    var flag_cells = flag_table.getElementsByTagName("td");
+  }
+}
 
-    //Bind handler to onclick for each cell image
-    //Determine cell class
-    var cell_img;
+//Bind event handlers / set classnames
+function bindHandlers(check_array){
 
+  //Extract table and cells
+  var flag_table = document.getElementById("flag-table");
+  var flag_cells = flag_table.getElementsByTagName("td");
 
-    for(var i = 0; i < flag_cells.length; i++){
+  //Bind handler to onclick for each cell image
+  //Determine cell class
+  var cell_img;
 
-        //Extract child
-        cell_img = flag_cells[i].children[0];
+  for(var i = 0; i < flag_cells.length; i++){
 
-        //Get child id, used to lookup stored array
-        img_no = cell_img.id;
-        console.log(img_no);
-        //Subtract one, zero indexed arrays
-        img_no--;
-        console.log(img_no);
+      //Extract child
+      cell_img = flag_cells[i].children[0];
 
-        //Bind handler
-        cell_img.onclick = checkHandler;
+      //Get child id, used to lookup stored array
+      img_no = cell_img.id;
+      console.log(img_no);
+      //Subtract one, zero indexed arrays
+      img_no--;
+      console.log(img_no);
 
-        //Determine class type
-        //0 -> missing
-        //1 -> found
-        if(results_array[img_no] == 0){
-          flag_cells[i].className = "missing";
-        }
-        else{
-            flag_cells[i].className = "found";
-        }
+      //Bind handlers
+      cell_img.onclick = checkHandler;
+      cell_img.onmouseover = hoverHandler;
 
-    }
+      //Determine class type
+      //0 -> missing
+      //1 -> found
+      if(check_array[img_no] == 0){
+        flag_cells[i].className = "missing";
+      }
+      else{
+          flag_cells[i].className = "found";
+      }
   }
 }
 
 
+//Hover handler
+function hoverHandler(event){
+
+  target = event.target;
+  document.getElementById("hover_text").innerHTML = target.title;
+
+}
 
 //Event handler for onclick
 function checkHandler(event){
@@ -66,7 +80,6 @@ function checkHandler(event){
 
     index = (event.target.id ) - 1;
     value = 0;
-
 
     console.log(target.parentElement)
 
@@ -90,8 +103,6 @@ function checkHandler(event){
       set.then(addItem, error);
 
     }
-
-
 }
 
 //Empty object check
