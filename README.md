@@ -4,7 +4,7 @@
 A simple web extension checklist for flag collectors.
 
 
-##TODO##
+## TODO
 
 Refactor code and package for submission.
 
@@ -13,7 +13,7 @@ this would allow larger flag images to be used on each page or breaking
 up the page into alphabetical sections.
 
 
-##Notes/Other##
+## Other
 
 Extension icon from: https://material.io/icons/
 
