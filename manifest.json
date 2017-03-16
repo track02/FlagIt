@@ -16,6 +16,12 @@
       "storage"
   ],
 
+  "application":{
+    "gecko":{
+       "id": "flagit"
+    }   
+  },
+
   "browser_action": {
     "default_icon": "icons/flag-icon-48.png",
     "default_title": "FlagIt",
