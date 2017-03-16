@@ -1,41 +1,58 @@
-//First pull results array (or add new one if it doesn't exist)
-var result_promise = browser.storage.local.get("results");
-result_promise.then(setup, error);
+/*
+*Script is called each time body is loaded
+*Retrieves the check array which denotes which flags have been already matched
+*Sets appropiate class for each image depending on returned check arrays (found / not found)
+*Binds onclick and onhover event handlers to each flag image
+*/
 
-//When the promise is fulfilled, start setup
-function setup(results_obj) {
+//Firstly retrieve the check array promise
+var check_promise = browser.storage.local.get("check_array");
 
-  //Check if a results string was returned
-  //If no results string is present - add a new one
-  if(isEmpty(results_obj)){
-    console.log("No results array");
-    var blank_array = new Array(300).fill(0);
-    let set = browser.storage.local.set({results: blank_array});
+//Resolve the promise, if check array is retrieved then begin setup
+//Otherwise call the error function (logs error)
+check_promise.then(setup, error);
+
+//Setup function determines whether the retrieved check object is empty (no array)
+//If so, then a new empty array is created and stored in local
+//Otherwise, the check array is extracted from the check object
+//setupTable is then called with the check-array
+function setup(check_obj) {
+
+  //Empty check object
+  if(isEmpty(check_obj)){
+    //Generate empty array and attempty store it at check_array
+    var blank_array = new Array(275).fill(0)
+    let set = browser.storage.local.set({check_array: blank_array});
+
+    //Attempt to store the array
     set.then(addItem, error);
-    bindHandlers(blank_array);
-  }
 
-  //Otherwise we have a results object, start processing
+    //Bind event handlers and set correct class using the blank_array
+    setupTable(blank_array);
+  }
+  //Otherwise we have a results object
   else{
 
-    //Pull out array from results_obj
-    results_array = results_obj.results;
-    bindHandlers(results_array);
+    //Pull out already populated array from results_obj
+    check_array = check_obj.check_array;
 
+    //Bind event handlers and set correct class using the populated array
+    setupTable(check_array);
   }
 }
 
-//Bind event handlers / set classnames
-function bindHandlers(check_array){
+//Binds onhover and onclick event handlers to each img in the table
+//Sets correct class to cells (missing / found)
+function setupTable(check_array){
 
   //Extract table and cells
   var flag_table = document.getElementById("flag-table");
   var flag_cells = flag_table.getElementsByTagName("td");
 
-  //Bind handler to onclick for each cell image
-  //Determine cell class
+  //Var to store img within each cell
   var cell_img;
 
+  //Loop over all cells, extract child img, bind handlers and set class name
   for(var i = 0; i < flag_cells.length; i++){
 
       //Extract child
@@ -43,10 +60,8 @@ function bindHandlers(check_array){
 
       //Get child id, used to lookup stored array
       img_no = cell_img.id;
-      console.log(img_no);
       //Subtract one, zero indexed arrays
       img_no--;
-      console.log(img_no);
 
       //Bind handlers
       cell_img.onclick = checkHandler;
@@ -64,24 +79,24 @@ function bindHandlers(check_array){
   }
 }
 
-
-//Hover handler
+//hoverHandler
+//Simply updates a paragraph element with the currently selected flag name
 function hoverHandler(event){
 
   target = event.target;
   document.getElementById("hover_text").innerHTML = target.title;
-
 }
 
 //Event handler for onclick
+//Swaps the className of the parent cell to toggle transparency
+//missing -> found
+//found -> missing
 function checkHandler(event){
     target = event.target; //Retrieve image that has been clicked
     parent = target.parentElement;
 
     index = (event.target.id ) - 1;
     value = 0;
-
-    console.log(target.parentElement)
 
     if(parent.className == "missing"){
       parent.className = "found"
@@ -90,18 +105,17 @@ function checkHandler(event){
       parent.className = "missing"
     }
 
-    //Write this to the results array
-    var result_promise = browser.storage.local.get("results");
+    //Write this to the check array
+    var result_promise = browser.storage.local.get("check_array");
     result_promise.then(updateResults, error);
 
-    //Update results array
-    function updateResults(results_obj){
+    //Update check array
+    function updateResults(check_obj){
 
       //When item is retrieved update it using the index and value
-      results_obj.results[index] = value;
-      let set = browser.storage.local.set(results_obj);
+      check_obj.check_array[index] = value;
+      let set = browser.storage.local.set(check_obj);
       set.then(addItem, error);
-
     }
 }
 
@@ -112,7 +126,7 @@ function isEmpty(obj){
 
 //Fulfill error
 function addItem(item){
-  console.log("Done adding");
+  console.log("Done adding item");
 }
 
 //Promise Error
