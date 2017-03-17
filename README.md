@@ -2,9 +2,8 @@
 
 A simple web extension checklist for flag collectors.
 
-Download blank_flags.xpi (no flags found) or complete_flags.xpi (all flags found) and drag into browser to install.
-
-Should work in Chrome and Firefox, any problems leave an issue.
+Use the .crx file in the Chrome folder or the .xpi file in the Firefox folder to install.
+Should be able to just drag onto browser.
 
 
 ## TODO
