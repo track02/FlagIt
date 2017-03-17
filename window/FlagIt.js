@@ -21,7 +21,7 @@ function setup(check_obj) {
   //Empty check object
   if(isEmpty(check_obj)){
     //Generate empty array and attempty store it at check_array
-    var blank_array = new Array(275).fill(0)
+    var blank_array = new Array(275).fill(1)
     let set = browser.storage.local.set({check_array: blank_array});
 
     //Attempt to store the array

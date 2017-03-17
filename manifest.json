@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "FlagIt",
-  "version": "0.21",
+  "version": "0.22",
 
   "description": "Flag Checklist",
 
@@ -14,7 +14,7 @@
 
   "applications": {
     "gecko": {
-      "id": "a.clarke@runbox.com",
+      "id": "flag@it.com",
       "strict_min_version": "42.0"
     }
   },
