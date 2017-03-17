@@ -1,17 +1,17 @@
 # FlagIt
 
-
 A simple web extension checklist for flag collectors.
+
+Download blank_flags.xpi (no flags found) or complete_flags.xpi (all flags found) and drag into browser to install.
+
+Should work in Chrome and Firefox, any problems leave an issue.
 
 
 ## TODO
 
-Refactor code and package for submission.
+Consider using individual pages and displaying flags alphabetically.
 
-Consider using individual pages and displaying flags alphabetically, 
-this would allow larger flag images to be used on each page or breaking 
-up the page into alphabetical sections.
-
+Consider adding sub-sections for each country to cover internal county/state/etc flags.
 
 ## Other
 
