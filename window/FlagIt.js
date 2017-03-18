@@ -9,8 +9,7 @@
 var check_promise = browser.storage.local.get("check_array");
 
 //Resolve the promise, if check array is retrieved then begin setup
-//Otherwise call the error function (logs error)
-check_promise.then(setup, error);
+check_promise.then(setup);
 
 //Setup function determines whether the retrieved check object is empty (no array)
 //If so, then a new empty array is created and stored in local
@@ -25,7 +24,7 @@ function setup(check_obj) {
     let set = browser.storage.local.set({check_array: blank_array});
 
     //Attempt to store the array
-    set.then(addItem, error);
+    set.then();
 
     //Bind event handlers and set correct class using the blank_array
     setupTable(blank_array);
@@ -84,7 +83,7 @@ function setupTable(check_array){
 function hoverHandler(event){
 
   target = event.target;
-  document.getElementById("hover_text").innerHTML = target.title;
+  document.getElementById("hover_text").textContent = target.title;
 }
 
 //Event handler for onclick
@@ -107,7 +106,7 @@ function checkHandler(event){
 
     //Write this to the check array
     var result_promise = browser.storage.local.get("check_array");
-    result_promise.then(updateResults, error);
+    result_promise.then(updateResults);
 
     //Update check array
     function updateResults(check_obj){
@@ -115,21 +114,11 @@ function checkHandler(event){
       //When item is retrieved update it using the index and value
       check_obj.check_array[index] = value;
       let set = browser.storage.local.set(check_obj);
-      set.then(addItem, error);
+      set.then();
     }
 }
 
 //Empty object check
 function isEmpty(obj){
     return (Object.getOwnPropertyNames(obj).length === 0);
-}
-
-//Fulfill error
-function addItem(item){
-  console.log("Done adding item");
-}
-
-//Promise Error
-function error(error) {
-  console.log(`Error: ${error}`);
 }
