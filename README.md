@@ -14,7 +14,6 @@ Consider using individual pages and displaying flags alphabetically.
 Consider adding sub-sections for each country to cover internal county/state/etc flags.
 
 Optimisations:
-- Inline handlers
 - boolean array over int array
 
 ## Other
