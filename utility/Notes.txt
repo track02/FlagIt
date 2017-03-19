@@ -1,6 +1,7 @@
 Now need to generate the following for regions/counties:
 
-> A Home Page - links to each country and a World Countries pages which will list all world flags (current FlagIt.html page)E
+>A Home Page - links to each country and a World Countries pages which will list all world flags (current FlagIt.html page)
+>Simple list of links will be okay for now.
 
 >Country Pages
 >These will consist of a heading of the country name and flags for each region/state/province
@@ -18,11 +19,26 @@ Now need to generate the following for regions/counties:
 
 >Will also need to generate javascript to bind handlers
 >handlers will be identical for every page
->make existing script generic, wrap into a setup function which takes in country name and no. regions
->use country name as the name for the check_array and no. regions as size for blank check array
->write a call to this script in html body using extracted directory name and table size as parameters
+>make existing script generic, wrap into a setup function which takes in country name and no. regions [DONE]
+
+-------------------------------------------------------------------------------------------------------------------------
+
+>FlagIt.js is used to setup event handlers and initialise the storage array when needed
+>It's been wrapped inside a function called init_setup(<array_name> <array_size)
+
+>Because inline function calls are not allowed, we'll instead load in a uniquely generated javascript file for each country which runs the init_setup procedure in FlagIt.js
+
+>Generate a js file <CountryName>.js which is a single line call to init_setup(<country_name> <no. flags>) 
+>this simply calls FlagIt.js
+
+>This allows handler bindings and ensures the correct storage array to be initialised at the correct size and set/get when required
+
+>Load in this script after the table
+
+-------------------------------------------------------------------------------------------------------------------------
 
 >First test - Attempt to recreate existing FlagIt.html page as World_Flags.html and a basic home page which links to it.
->Update javascript and test on current implementation, ensure function call works correctly
+>Update javascript and test on current implementation, ensure function call works correctly [DONE]
+>Update python script to generate both HTML and associated Javascript files
 >Create a World_Flags folder, insert flag_list.txt and correct flag images.
->Run python script, expect -> FlagIt.html (home page) which links to World_Flags.html 
+>Run python script, expect -> FlagIt.html (home page), World_Flags.html and World_Flags.js
