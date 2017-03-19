@@ -29,7 +29,9 @@ with open('FlagIt.html', mode="w+", encoding="utf-8") as html_page:
     html_page.write("\t\t<meta charset=\"UTF-8\">\n")
     html_page.write("\t\t<link rel=\"stylesheet\" href=\"FlagIt.css\"/>\n")
     html_page.write("\t\t<script type=\"application/javascript\" src=\"browser-polyfill.js\"></script>\n")
-    html_page.write("\t</head>\n\n")
+    #Setup script - for handlers
+    html_page.write("\t\t<script type=\"text/javascript\" src=\"FlagIt.js\"></script>\n\n")
+	html_page.write("\t</head>\n\n")
 
     #Body start
     html_page.write("\t<body>\n\n")
@@ -87,8 +89,9 @@ with open('FlagIt.html', mode="w+", encoding="utf-8") as html_page:
     #Hover text
     html_page.write("<p id=\"hover_text\"> </p>")
 
-    #Setup script - for handlers
-    html_page.write("\t\t<script type=\"text/javascript\" src=\"FlagIt.js\"></script>\n\n")
+    #Setup script - initialises setup defined in FlagIt.js
+	#Will need to be generated alongside HTML
+    html_page.write("\t\t<script type=\"text/javascript\" src=\"WorldFlags.js\"></script>\n\n")
 
     #Body end
     html_page.write("\t</body>\n\n")
