@@ -6,7 +6,7 @@ import sys;
 import os;
 
 #Vars
-cells_per_row = 5
+cells_per_row = 6
 master_directory = sys.argv[1] #Second parameter is directory to process
 
 
@@ -25,11 +25,18 @@ for directory in os.listdir(master_directory):
     #Get the directory name
     dirname = os.path.split(directory)[1]
 
+    #Total no. regions - use to dynamically determine a nice no. of cells per row [TODO]
+    dirtotal = len(os.listdir(master_directory))
+
     #First character - determine if a new contents page is needed
     firstchar = dirname[0]
 
-    #Add country to dict
-    country_dict[firstchar.lower()].append(dirname)
+    #Add country to dict - unless world flags
+    if(dirname != "World Flags"):
+        country_dict[firstchar.lower()].append(dirname)
+        cells_per_row = 6
+    else:
+        cells_per_row = 15
 
     #total regions in the country
     total = 0
@@ -104,10 +111,13 @@ for directory in os.listdir(master_directory):
         html_page.write("\t\t</table>\n\n")
 
         #Hover text
-        html_page.write("<p id=\"hover_text\"> </p>")
+        html_page.write("<p id=\"hover_text\">&nbsp;</p>")
 
         #Back
-        html_page.write("</br><p><a href={0}_Contents.html>Back</a>".format(firstchar))
+        if (dirname != "World Flags"):
+            html_page.write("<p><a class=\"back\" href={0}_Contents.html>Back</a>".format(firstchar))
+        else:
+            html_page.write("<p><a class=\"back\" href=/Window/FlagIt.html>Back</a>")
 
         #Setup script - initialises setup defined in FlagIt.js
         #Will need to be generated alongside HTML
@@ -139,8 +149,14 @@ with open("Window/FlagIt.html", mode="w+", encoding="utf-8") as main_page:
     main_page.write("\n\t\t<link rel=\"stylesheet\" href=\"/CSS/FlagIt.css\"/>")
     main_page.write("\t</head>")
     main_page.write("\n\n\t<body>")
-    main_page.write("\n\t\t<h2>FlagIt</h2>")
-    main_page.write("\n\t\t<ul>")
+    main_page.write("\n\t\t<h2>FlagIt - Flag Checklist</h2>")
+
+    main_page.write("\n\t\t<h3>Flags of the World</h3>")
+    main_page.write("\n\t\t<a href=\"/Pages/World Flags.html\">World Flags</a>")
+
+    main_page.write("\n\t\t<h3>Country Regions</h3>")
+    main_page.write("\t\t\t<p>")
+
 
 
     for a in range(0, 26):
@@ -155,16 +171,20 @@ with open("Window/FlagIt.html", mode="w+", encoding="utf-8") as main_page:
             contents_page.write("\n\n\t<body>")
             contents_page.write("\n\t\t<h2>{0} - Countries</h2>".format(start_char.upper()))
             contents_page.write("\n\t\t<ul>")
+
             for country in country_dict[start_char]:
                 contents_page.write("\n\t\t\t<li><a href=\"/Pages/{0}.html\">{0}</a></li>".format(country))
             contents_page.write("\n\t\t</ul>")
-            contents_page.write("\n\t\t<a href=\"/Window/FlagIt.html\">Back</a>")
+            contents_page.write("\n\t\t<a class=\"back\" href=\"/Window/FlagIt.html\">Back</a>")
             contents_page.write("\n\n\t</body>")
             contents_page.write("\n</html>")
-            main_page.write("\t\t\t<p><a href=\"/Pages/{0}_Contents.html\">{0}</a></p>".format(start_char.upper()))
+            main_page.write("\t\t\t\n<a href=\"/Pages/{0}_Contents.html\">{0}</a>".format(start_char.upper()))
+
         start_char = chr(ord(start_char) + 1)
 
-
+    main_page.write("\t\t\t</p>")
     main_page.write("\n\t\t</ul>")
     main_page.write("\n\n\t</body>")
     main_page.write("\n</html>")
+
+#Build World Flags Page

@@ -1,11 +1,8 @@
 body{
   overflow-y:auto;
   min-width:300px;
-  background-color: white;
+  background-color: #FBFBFB;
 }
-
-
-
 
 img{
   z-index:5;
@@ -16,12 +13,18 @@ img:hover {
   border: 1px solid #CFEEF6; 
 }
 
+h2{
+  color: #60CAAD;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: monospace;
+
+}
+
 p{
-  display: inline;
-  text-align: center;
   font-family: monospace;
   text-shadow: 1px 1px 1px #ccc;
-  color: black;
+  color: #444444 ;
   text-decoration: none;
 }
 
@@ -35,4 +38,8 @@ table{
 
 .found{
   opacity: 1.0;
+}
+
+#hover_text{
+  text-align: center;
 }
