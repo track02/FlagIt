@@ -183,7 +183,6 @@ with open("Window/FlagIt.html", mode="w+", encoding="utf-8") as main_page:
         start_char = chr(ord(start_char) + 1)
 
     main_page.write("\t\t\t</p>")
-    main_page.write("\n\t\t</ul>")
     main_page.write("\n\n\t</body>")
     main_page.write("\n</html>")
 
