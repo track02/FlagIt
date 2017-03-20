@@ -1,7 +1,7 @@
 body{
   overflow-y:auto;
   min-width:300px;
-  background-color: #FBFBFB;
+  background-color: #F7FBFC;
 }
 
 img{
@@ -14,17 +14,24 @@ img:hover {
 }
 
 h2{
-  color: #60CAAD;
+  color: #E74B48;
   text-decoration: underline;
   text-shadow: 1px 1px 1px #ccc;
   font-family: monospace;
 
 }
 
-p{
+h3{
+  color: #57CBFF;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: monospace;
+
+}
+
+a{
   font-family: monospace;
   text-shadow: 1px 1px 1px #ccc;
-  color: #444444 ;
+  color: #2273AA ;
   text-decoration: none;
 }
 
@@ -41,5 +48,9 @@ table{
 }
 
 #hover_text{
+  font-family: monospace;
+  text-shadow: 1px 1px 1px #ccc;
+  color: #263650 ;
+  text-decoration: none;
   text-align: center;
 }
