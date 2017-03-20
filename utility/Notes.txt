@@ -7,11 +7,11 @@ Now need to generate the following for regions/counties:
 >These will consist of a heading of the country name and flags for each region/state/province
 >May be another content page linking to individual countries/regions (e.g United Kingdom -> England, Scotland, Wales, NI)
 >Will not go any further for this version (no cities sub-regions)
-  
+
 > World Flags can be generated using the same method "World Flags" as country name and existing country flags as regions
 
->Given a path to a directory 
->Take Directory Name and map Country Name
+>Given a path to a directory
+>Take Directory Name and map to Country Name
 >Open the Directory
 >Open the text list inside
 >Each line in the list corresponds to a region of the country, use to insert img and set title
@@ -28,7 +28,7 @@ Now need to generate the following for regions/counties:
 
 >Because inline function calls are not allowed, we'll instead load in a uniquely generated javascript file for each country which runs the init_setup procedure in FlagIt.js
 
->Generate a js file <CountryName>.js which is a single line call to init_setup(<country_name> <no. flags>) 
+>Generate a js file <CountryName>.js which is a single line call to init_setup(<country_name> <no. flags>)
 >this simply calls FlagIt.js
 
 >This allows handler bindings and ensures the correct storage array to be initialised at the correct size and set/get when required
@@ -42,3 +42,12 @@ Now need to generate the following for regions/counties:
 >Update python script to generate both HTML and associated Javascript files
 >Create a World_Flags folder, insert flag_list.txt and correct flag images.
 >Run python script, expect -> FlagIt.html (home page), World_Flags.html and World_Flags.js
+
+-------------------------------------------------------------------------------------------------------------------------
+
+If going further than regions/provinces, directores will contain sub directories
+
+>If a directory instead contains other directories
+>Create a contents page as directory name, with links for each child directory <sub_directory>.html
+
+--------------------------------------------------------------------------------------------------------------------------
