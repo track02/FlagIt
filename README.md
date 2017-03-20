@@ -2,9 +2,11 @@
 
 A simple web extension checklist for flag collectors.
 
-Use the .crx file in the Chrome folder or the .xpi file in the Firefox folder to install.
+Use the .crx file in the Chromium folder or the .xpi file in the Firefox folder to install.
 
 Should be able to just drag onto browser addons page, tested in Firefox and Chromium.
+
+##Chromium release is outdate, does not have regional areas
 
 
 ## TODO
