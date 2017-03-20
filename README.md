@@ -13,8 +13,10 @@ Should be able to just drag onto browser addons page, tested in Firefox and Chro
 
 Optimisations:
 - boolean array over int array
-- loading images from external source (this github page) instead of bundling with addon
-- Compressing images, extracting only when needed
+- loading images from external source (e.g. this github page) instead of bundling with addon
+- further image compression, extracting only when needed
+- world map with toggling countries
+
 
 ## Other
 
