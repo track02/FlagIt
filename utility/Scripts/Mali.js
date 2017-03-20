@@ -1,1 +1,1 @@
-init_setup("Mali", 11)
+init_setup("Mali", 10)

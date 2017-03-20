@@ -1,1 +1,1 @@
-init_setup("Fiji", 7)
+init_setup("Fiji", 6)

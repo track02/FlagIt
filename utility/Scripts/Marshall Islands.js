@@ -1,1 +1,1 @@
-init_setup("Marshall Islands", 9)
+init_setup("Marshall Islands", 8)

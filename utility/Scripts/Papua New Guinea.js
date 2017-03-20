@@ -1,1 +1,1 @@
-init_setup("Papua New Guinea", 24)
+init_setup("Papua New Guinea", 23)

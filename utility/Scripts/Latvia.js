@@ -1,1 +1,1 @@
-init_setup("Latvia", 121)
+init_setup("Latvia", 120)

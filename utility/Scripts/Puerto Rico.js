@@ -1,1 +1,1 @@
-init_setup("Puerto Rico", 80)
+init_setup("Puerto Rico", 79)

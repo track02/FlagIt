@@ -1,1 +1,1 @@
-init_setup("Guernsey", 14)
+init_setup("Guernsey", 13)

@@ -1,1 +1,1 @@
-init_setup("East Timor", 15)
+init_setup("East Timor", 14)

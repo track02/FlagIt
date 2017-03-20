@@ -1,1 +1,1 @@
-init_setup("Northern Ireland", 10)
+init_setup("Northern Ireland", 9)

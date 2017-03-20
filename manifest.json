@@ -26,7 +26,7 @@
   "browser_action": {
     "default_icon": "icons/flag-icon-48.png",
     "default_title": "FlagIt",
-    "default_popup": "window/FlagIt.html"
+    "default_popup": "Window/FlagIt.html"
   }
 
 }

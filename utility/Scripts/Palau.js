@@ -1,1 +1,1 @@
-init_setup("Palau", 18)
+init_setup("Palau", 17)

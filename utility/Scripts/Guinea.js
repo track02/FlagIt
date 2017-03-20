@@ -1,1 +1,1 @@
-init_setup("Guinea", 3)
+init_setup("Guinea", 2)

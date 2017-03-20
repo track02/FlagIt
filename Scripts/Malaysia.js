@@ -1,1 +1,1 @@
-init_setup("Malaysia", 18)
+init_setup("Malaysia", 17)

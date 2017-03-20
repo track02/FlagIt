@@ -1,1 +1,1 @@
-init_setup("Namibia", 16)
+init_setup("Namibia", 15)

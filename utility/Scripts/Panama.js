@@ -1,1 +1,1 @@
-init_setup("Panama", 15)
+init_setup("Panama", 14)

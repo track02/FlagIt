@@ -1,1 +1,1 @@
-init_setup("Kiribati", 5)
+init_setup("Kiribati", 4)

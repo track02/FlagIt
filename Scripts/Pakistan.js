@@ -1,1 +1,1 @@
-init_setup("Pakistan", 10)
+init_setup("Pakistan", 9)

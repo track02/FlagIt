@@ -1,1 +1,1 @@
-init_setup("Maldives", 3)
+init_setup("Maldives", 2)

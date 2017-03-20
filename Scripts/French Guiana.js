@@ -1,1 +1,1 @@
-init_setup("French Guiana", 24)
+init_setup("French Guiana", 23)

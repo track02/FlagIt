@@ -1,1 +1,1 @@
-init_setup("England", 50)
+init_setup("England", 49)

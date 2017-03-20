@@ -1,1 +1,1 @@
-init_setup("Liberia", 17)
+init_setup("Liberia", 16)

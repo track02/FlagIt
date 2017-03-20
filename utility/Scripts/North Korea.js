@@ -1,1 +1,1 @@
-init_setup("North Korea", 4)
+init_setup("North Korea", 3)

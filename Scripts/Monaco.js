@@ -1,1 +1,1 @@
-init_setup("Monaco", 3)
+init_setup("Monaco", 2)

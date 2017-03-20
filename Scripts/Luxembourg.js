@@ -1,1 +1,1 @@
-init_setup("Luxembourg", 10)
+init_setup("Luxembourg", 9)

@@ -1,1 +1,1 @@
-init_setup("Malta", 7)
+init_setup("Malta", 6)

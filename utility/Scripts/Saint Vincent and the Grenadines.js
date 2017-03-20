@@ -1,1 +1,1 @@
-init_setup("Saint Vincent and the Grenadines", 3)
+init_setup("Saint Vincent and the Grenadines", 2)

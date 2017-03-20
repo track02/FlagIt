@@ -1,1 +1,1 @@
-init_setup("Palestine", 4)
+init_setup("Palestine", 3)

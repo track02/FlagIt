@@ -1,1 +1,1 @@
-init_setup("Cyprus", 6)
+init_setup("Cyprus", 5)

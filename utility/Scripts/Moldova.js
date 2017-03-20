@@ -1,1 +1,1 @@
-init_setup("Moldova", 39)
+init_setup("Moldova", 38)

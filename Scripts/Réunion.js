@@ -1,1 +1,1 @@
-init_setup("Réunion", 11)
+init_setup("Réunion", 10)

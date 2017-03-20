@@ -1,1 +1,1 @@
-init_setup("New Caledonia", 5)
+init_setup("New Caledonia", 4)

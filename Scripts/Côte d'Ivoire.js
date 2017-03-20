@@ -1,1 +1,1 @@
-init_setup("Côte d'Ivoire", 3)
+init_setup("Côte d'Ivoire", 2)

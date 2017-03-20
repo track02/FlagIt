@@ -1,1 +1,1 @@
-init_setup("Eritrea", 3)
+init_setup("Eritrea", 2)

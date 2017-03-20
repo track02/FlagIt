@@ -1,1 +1,1 @@
-init_setup("Guadeloupe", 9)
+init_setup("Guadeloupe", 8)

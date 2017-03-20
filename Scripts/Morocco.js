@@ -1,1 +1,1 @@
-init_setup("Morocco", 42)
+init_setup("Morocco", 41)

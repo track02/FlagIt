@@ -1,1 +1,1 @@
-init_setup("Oman", 4)
+init_setup("Oman", 3)
