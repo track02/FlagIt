@@ -1,5 +1,6 @@
 body{
   overflow-y:auto;
+  min-width:250px;
 }
 
 img{
@@ -16,6 +17,10 @@ p{
   margin: 0px;
   padding: 0px;
   font-family: monospace;
+}
+
+table{
+  margin: 0px auto;
 }
 
 .missing {
