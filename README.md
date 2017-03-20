@@ -6,7 +6,7 @@ Use the .crx file in the Chromium folder or the .xpi file in the Firefox folder 
 
 Should be able to just drag onto browser addons page, tested in Firefox and Chromium.
 
-##Chromium release is outdate, does not have regional areas
+## Chromium release is outdated, does not have regional areas
 
 
 ## TODO
