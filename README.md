@@ -9,12 +9,10 @@ Should be able to just drag onto browser addons page, tested in Firefox and Chro
 
 ## TODO
 
-Consider using individual pages and displaying flags alphabetically.
-
-Consider adding sub-sections for each country to cover internal county/state/etc flags.
-
 Optimisations:
 - boolean array over int array
+- loading images from external source (this github page) instead of bundling with addon
+- Compressing images, extracting only when needed
 
 ## Other
 
