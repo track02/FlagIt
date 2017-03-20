@@ -20,7 +20,7 @@ for a in range(0,26):
     start_char = chr(ord(start_char) + 1)
 
 #for each sub-directory
-for directory in os.listdir(master_directory):
+for directory in sorted(os.listdir(master_directory)):
 
     #Get the directory name
     dirname = os.path.split(directory)[1]
@@ -66,9 +66,9 @@ for directory in os.listdir(master_directory):
         total = 1
 
         #Generate table - flag for each region
-        for flag in os.listdir("{0}/{1}/".format(master_directory, directory)):
+        for flag in sorted(os.listdir("{0}/{1}/".format(master_directory, directory))):
 
-            #print(flag)
+            print(flag)
             filename = flag
             region = os.path.splitext(flag)[0]
 
@@ -101,7 +101,7 @@ for directory in os.listdir(master_directory):
             #Write to file
             html_page.write(html_string)
 
-            if(counter > cells_per_row) or flag == os.listdir("{0}/{1}/".format(master_directory, directory))[-1]:
+            if(counter > cells_per_row) or flag == sorted(os.listdir("{0}/{1}/".format(master_directory, directory)))[-1]:
                 html_page.write("\t\t\t</tr>\n")
                 counter = 0
 

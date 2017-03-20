@@ -1,1 +1,1 @@
-init_setup("World Flags", 248)
+init_setup("World Flags", 242)
