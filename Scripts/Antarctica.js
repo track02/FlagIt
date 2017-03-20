@@ -1,0 +1,1 @@
+init_setup("Antarctica", 7)

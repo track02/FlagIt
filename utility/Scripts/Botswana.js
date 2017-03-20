@@ -1,0 +1,1 @@
+init_setup("Botswana", 17)

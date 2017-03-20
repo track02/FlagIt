@@ -1,0 +1,1 @@
+init_setup("Wallis and Futuna", 4)

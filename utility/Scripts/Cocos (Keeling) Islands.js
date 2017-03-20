@@ -1,0 +1,1 @@
+init_setup("Cocos (Keeling) Islands", 2)

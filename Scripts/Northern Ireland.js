@@ -1,0 +1,1 @@
+init_setup("Northern Ireland", 10)

@@ -1,0 +1,1 @@
+init_setup("Nigeria", 32)

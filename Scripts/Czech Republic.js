@@ -1,0 +1,1 @@
+init_setup("Czech Republic", 16)

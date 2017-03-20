@@ -1,0 +1,1 @@
+init_setup("New Caledonia", 5)
