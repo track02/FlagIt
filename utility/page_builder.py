@@ -16,7 +16,7 @@ print(os.path.split(directory)[1])
 print("generated_pages/"+dirname+'.html')
 
 #Write to html file
-with open("generated_pages/{0}.html".format(dirname), mode="w+", encoding="utf-8") as html_page:
+with open("Pages/{0}.html".format(dirname), mode="w+", encoding="utf-8") as html_page:
 
     #Doc
     html_page.write("<!DOCTYPE html>\n")
@@ -25,10 +25,10 @@ with open("generated_pages/{0}.html".format(dirname), mode="w+", encoding="utf-8
     html_page.write("<html>\n")
     html_page.write("\t<head>\n")
     html_page.write("\t\t<meta charset=\"UTF-8\">\n")
-    html_page.write("\t\t<link rel=\"stylesheet\" href=\"FlagIt.css\"/>\n")
-    html_page.write("\t\t<script type=\"application/javascript\" src=\"browser-polyfill.js\"></script>\n")
+    html_page.write("\t\t<link rel=\"stylesheet\" href=\"/CSS/FlagIt.css\"/>\n")
+    html_page.write("\t\t<script type=\"application/javascript\" src=\"/Scripts/browser-polyfill.js\"></script>\n")
     #Setup script - for handlers
-    html_page.write("\t\t<script type=\"text/javascript\" src=\"FlagIt.js\"></script>\n\n")
+    html_page.write("\t\t<script type=\"text/javascript\" src=\"/Scripts/FlagIt.js\"></script>\n\n")
     html_page.write("\t</head>\n\n")
     #Body start
     html_page.write("\t<body>\n\n")
@@ -87,7 +87,7 @@ with open("generated_pages/{0}.html".format(dirname), mode="w+", encoding="utf-8
 
     #Setup script - initialises setup defined in FlagIt.js
 	#Will need to be generated alongside HTML
-    html_page.write("\t\t<script type=\"text/javascript\" src=\"{0}.js\"></script>\n\n".format(dirname))
+    html_page.write("\t\t<script type=\"text/javascript\" src=\"/Scripts/{0}.js\"></script>\n\n".format(dirname))
 
     #Body end
     html_page.write("\t</body>\n\n")
@@ -97,5 +97,5 @@ with open("generated_pages/{0}.html".format(dirname), mode="w+", encoding="utf-8
 
 	#Write JS initialisation script
 	#Write to html file
-with open("generated_js/{0}.js".format(dirname), mode="w+", encoding="utf-8") as js_script:
+with open("Scripts/{0}.js".format(dirname), mode="w+", encoding="utf-8") as js_script:
 	js_script.write("init_setup(\"{0}\", {1})".format(dirname, total));
