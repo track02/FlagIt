@@ -5,12 +5,19 @@
 *Binds onclick and onhover event handlers to each flag image
 */
 
-console.log("called");
-
-//Wrap functions inside init_setup, giving access to parameters
+//Wrap functions inside init_setup, giving them access to parameters
 function init_setup(array_name, array_size){
-	
-	
+
+
+	//Begin by retrieving the check array promise
+	var check_promise = browser.storage.local.get(array_name);
+
+	//Resolve the promise, if check array is retrieved then begin setup
+	check_promise.then(setup);
+
+
+  /*-------------------Function Defs-----------------------------------*/
+
 	//Event handler for onclick
 	//Swaps the className of the parent cell to toggle transparency
 	//missing -> found
@@ -30,36 +37,27 @@ function init_setup(array_name, array_size){
 		}
 
 		//Write this to the check array
-		console.log(array_name);
 		var result_promise = browser.storage.local.get(array_name);
 		result_promise.then(updateResults);
-		
+
 		//Update check array
 		function updateResults(check_obj){
-			
-		  console.log(check_obj);		
-		  console.log(check_obj[array_name]);
 
 		  //When item is retrieved update it using the index and value
 		  check_obj[array_name][index] = value;
-		  
-		  console.log(check_obj);
-		  
+
 		  let set = browser.storage.local.set(check_obj);
 		  set.then();
 		}
-	}	
-	
-	
+	}
+
 	//Setup function determines whether the retrieved check object is empty (no array)
 	//If so, then a new empty array is created and stored in local
 	//Otherwise, the check array is extracted from the check object
 	//setupTable is then called with the check-array
 	function setup(check_obj) {
-		
-		console.log(check_obj);
 
-	  //Empty check object or length difference 
+	  //Empty check object or length difference
 	  if(isEmpty(check_obj) || check_obj[array_name].length != array_size){
 		//Generate empty array and attempty store it at check_array
 		//console.log("Blank Table Added of size " + array_size);
@@ -77,27 +75,15 @@ function init_setup(array_name, array_size){
 	  }
 	  //Otherwise we have a results object
 	  else{
-		
-		console.log("found table");
-		
+
 		//Pull out already populated array from results_obj
 		check_array = check_obj[array_name];
-		
-		console.log(check_array);
 
 		//Bind event handlers and set correct class using the populated array
 		setupTable(check_array);
 	  }
-	  
 	}
-	
-	//Begin by retrieving the check array promise
-	var check_promise = browser.storage.local.get(array_name);
 
-	//Resolve the promise, if check array is retrieved then begin setup
-	check_promise.then(setup);
-	
-	
 	//Binds onhover and onclick event handlers to each img in the table
 	//Sets correct class to cells (missing / found)
 	function setupTable(check_array){
@@ -143,15 +129,9 @@ function init_setup(array_name, array_size){
 	  document.getElementById("hover_text").textContent = target.title;
 	}
 
-
-
 	//Empty object check
 	function isEmpty(obj){
 		return (Object.getOwnPropertyNames(obj).length === 0);
-	}	
-	
+	}
+
 }
-
-
-
-
