@@ -1,1 +1,1 @@
-init_setup("Belize", 3)
+init_setup("Belize", 3);

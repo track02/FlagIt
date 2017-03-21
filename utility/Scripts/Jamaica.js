@@ -1,1 +1,1 @@
-init_setup("Jamaica", 15)
+init_setup("Jamaica", 15);

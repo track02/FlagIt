@@ -1,1 +1,1 @@
-init_setup("Andorra", 8)
+init_setup("Andorra", 8);

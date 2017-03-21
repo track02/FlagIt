@@ -1,1 +1,1 @@
-init_setup("Barbados", 2)
+init_setup("Barbados", 2);

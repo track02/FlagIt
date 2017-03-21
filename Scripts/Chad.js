@@ -1,1 +1,1 @@
-init_setup("Chad", 2)
+init_setup("Chad", 2);

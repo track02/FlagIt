@@ -1,1 +1,1 @@
-init_setup("Guam", 20)
+init_setup("Guam", 20);

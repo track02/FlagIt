@@ -1,1 +1,1 @@
-init_setup("Monaco", 2)
+init_setup("Monaco", 2);

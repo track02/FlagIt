@@ -1,1 +1,1 @@
-init_setup("Kiribati", 4)
+init_setup("Kiribati", 4);

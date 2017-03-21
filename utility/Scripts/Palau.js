@@ -1,1 +1,1 @@
-init_setup("Palau", 17)
+init_setup("Palau", 17);

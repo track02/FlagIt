@@ -1,1 +1,1 @@
-init_setup("Mauritius", 11)
+init_setup("Mauritius", 11);

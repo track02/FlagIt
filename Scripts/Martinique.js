@@ -1,1 +1,1 @@
-init_setup("Martinique", 7)
+init_setup("Martinique", 7);

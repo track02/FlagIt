@@ -1,1 +1,1 @@
-init_setup("Niue", 2)
+init_setup("Niue", 2);

@@ -1,1 +1,1 @@
-init_setup("New Caledonia", 4)
+init_setup("New Caledonia", 4);

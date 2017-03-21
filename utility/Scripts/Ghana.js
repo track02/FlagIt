@@ -1,1 +1,1 @@
-init_setup("Ghana", 8)
+init_setup("Ghana", 8);

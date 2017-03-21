@@ -1,1 +1,1 @@
-init_setup("Liberia", 16)
+init_setup("Liberia", 16);

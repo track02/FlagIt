@@ -1,1 +1,1 @@
-init_setup("Saint Kitts and Nevis", 2)
+init_setup("Saint Kitts and Nevis", 2);

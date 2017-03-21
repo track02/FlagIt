@@ -1,1 +1,1 @@
-init_setup("Afghanistan", 16)
+init_setup("Afghanistan", 16);

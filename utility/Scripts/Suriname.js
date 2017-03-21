@@ -1,1 +1,1 @@
-init_setup("Suriname", 7)
+init_setup("Suriname", 7);

@@ -1,1 +1,1 @@
-init_setup("Liechtenstein", 12)
+init_setup("Liechtenstein", 12);

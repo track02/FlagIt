@@ -1,1 +1,1 @@
-init_setup("Guadeloupe", 8)
+init_setup("Guadeloupe", 8);

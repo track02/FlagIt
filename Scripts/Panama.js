@@ -1,1 +1,1 @@
-init_setup("Panama", 14)
+init_setup("Panama", 14);

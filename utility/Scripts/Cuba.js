@@ -1,1 +1,1 @@
-init_setup("Cuba", 17)
+init_setup("Cuba", 17);

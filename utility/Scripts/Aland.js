@@ -1,1 +1,1 @@
-init_setup("Aland", 17)
+init_setup("Aland", 17);

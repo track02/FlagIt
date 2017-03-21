@@ -1,1 +1,1 @@
-init_setup("Maldives", 2)
+init_setup("Maldives", 2);

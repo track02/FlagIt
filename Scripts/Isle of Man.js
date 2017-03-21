@@ -1,1 +1,1 @@
-init_setup("Isle of Man", 20)
+init_setup("Isle of Man", 20);

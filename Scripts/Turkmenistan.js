@@ -1,1 +1,1 @@
-init_setup("Turkmenistan", 2)
+init_setup("Turkmenistan", 2);

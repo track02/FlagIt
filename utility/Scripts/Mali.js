@@ -1,1 +1,1 @@
-init_setup("Mali", 10)
+init_setup("Mali", 10);

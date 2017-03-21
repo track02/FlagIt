@@ -1,1 +1,1 @@
-init_setup("Antarctica", 7)
+init_setup("Antarctica", 7);

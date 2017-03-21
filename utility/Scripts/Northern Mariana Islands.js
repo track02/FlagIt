@@ -1,1 +1,1 @@
-init_setup("Northern Mariana Islands", 4)
+init_setup("Northern Mariana Islands", 4);

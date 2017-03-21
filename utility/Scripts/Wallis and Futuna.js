@@ -1,1 +1,1 @@
-init_setup("Wallis and Futuna", 4)
+init_setup("Wallis and Futuna", 4);

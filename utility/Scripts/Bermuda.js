@@ -1,1 +1,1 @@
-init_setup("Bermuda", 12)
+init_setup("Bermuda", 12);

@@ -1,1 +1,1 @@
-init_setup("Latvia", 120)
+init_setup("Latvia", 120);

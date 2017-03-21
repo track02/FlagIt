@@ -1,1 +1,1 @@
-init_setup("Gabon", 10)
+init_setup("Gabon", 10);

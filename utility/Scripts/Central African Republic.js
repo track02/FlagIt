@@ -1,1 +1,1 @@
-init_setup("Central African Republic", 2)
+init_setup("Central African Republic", 2);

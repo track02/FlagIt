@@ -1,1 +1,1 @@
-init_setup("Togo", 2)
+init_setup("Togo", 2);

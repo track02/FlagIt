@@ -1,1 +1,1 @@
-init_setup("Belgium", 4)
+init_setup("Belgium", 4);

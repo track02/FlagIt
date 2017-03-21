@@ -1,1 +1,1 @@
-init_setup("Fiji", 6)
+init_setup("Fiji", 6);

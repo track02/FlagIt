@@ -1,1 +1,1 @@
-init_setup("Belarus", 8)
+init_setup("Belarus", 8);

@@ -1,1 +1,1 @@
-init_setup("Vanuatu", 7)
+init_setup("Vanuatu", 7);

@@ -1,1 +1,1 @@
-init_setup("Cape Verde", 6)
+init_setup("Cape Verde", 6);

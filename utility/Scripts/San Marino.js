@@ -1,1 +1,1 @@
-init_setup("San Marino", 10)
+init_setup("San Marino", 10);

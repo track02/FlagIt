@@ -1,1 +1,1 @@
-init_setup("Faroe Islands", 12)
+init_setup("Faroe Islands", 12);

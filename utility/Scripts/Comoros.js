@@ -1,1 +1,1 @@
-init_setup("Comoros", 4)
+init_setup("Comoros", 4);

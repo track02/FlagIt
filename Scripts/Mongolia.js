@@ -1,1 +1,1 @@
-init_setup("Mongolia", 23)
+init_setup("Mongolia", 23);

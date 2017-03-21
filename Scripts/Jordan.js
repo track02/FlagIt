@@ -1,1 +1,1 @@
-init_setup("Jordan", 2)
+init_setup("Jordan", 2);

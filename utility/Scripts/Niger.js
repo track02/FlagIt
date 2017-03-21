@@ -1,1 +1,1 @@
-init_setup("Niger", 9)
+init_setup("Niger", 9);

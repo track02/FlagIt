@@ -1,1 +1,1 @@
-init_setup("Christmas Island", 2)
+init_setup("Christmas Island", 2);

@@ -1,1 +1,1 @@
-init_setup("Tonga", 2)
+init_setup("Tonga", 2);

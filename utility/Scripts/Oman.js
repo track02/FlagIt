@@ -1,1 +1,1 @@
-init_setup("Oman", 3)
+init_setup("Oman", 3);

@@ -1,1 +1,1 @@
-init_setup("Myanmar", 16)
+init_setup("Myanmar", 16);

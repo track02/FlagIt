@@ -1,1 +1,1 @@
-init_setup("Solomon Islands", 11)
+init_setup("Solomon Islands", 11);

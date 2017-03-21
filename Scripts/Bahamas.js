@@ -1,1 +1,1 @@
-init_setup("Bahamas", 18)
+init_setup("Bahamas", 18);

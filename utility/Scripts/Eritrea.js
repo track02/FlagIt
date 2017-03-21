@@ -1,1 +1,1 @@
-init_setup("Eritrea", 2)
+init_setup("Eritrea", 2);

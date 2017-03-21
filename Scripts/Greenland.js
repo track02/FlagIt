@@ -1,1 +1,1 @@
-init_setup("Greenland", 5)
+init_setup("Greenland", 5);

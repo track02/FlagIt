@@ -1,1 +1,1 @@
-init_setup("Burundi", 2)
+init_setup("Burundi", 2);

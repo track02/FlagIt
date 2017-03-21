@@ -1,1 +1,1 @@
-init_setup("French Southern Territories", 6)
+init_setup("French Southern Territories", 6);

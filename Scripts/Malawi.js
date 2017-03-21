@@ -1,1 +1,1 @@
-init_setup("Malawi", 4)
+init_setup("Malawi", 4);

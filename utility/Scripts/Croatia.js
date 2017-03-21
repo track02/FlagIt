@@ -1,1 +1,1 @@
-init_setup("Croatia", 22)
+init_setup("Croatia", 22);

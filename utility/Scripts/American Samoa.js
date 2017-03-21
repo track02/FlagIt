@@ -1,1 +1,1 @@
-init_setup("American Samoa", 3)
+init_setup("American Samoa", 3);

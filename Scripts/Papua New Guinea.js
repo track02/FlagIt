@@ -1,1 +1,1 @@
-init_setup("Papua New Guinea", 23)
+init_setup("Papua New Guinea", 23);

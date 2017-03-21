@@ -1,1 +1,1 @@
-init_setup("Swaziland", 3)
+init_setup("Swaziland", 3);

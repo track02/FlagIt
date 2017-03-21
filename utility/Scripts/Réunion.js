@@ -1,1 +1,1 @@
-init_setup("Réunion", 10)
+init_setup("Réunion", 10);

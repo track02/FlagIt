@@ -1,1 +1,1 @@
-init_setup("Sierra Leone", 2)
+init_setup("Sierra Leone", 2);

@@ -1,1 +1,1 @@
-init_setup("World Flags", 242)
+init_setup("World Flags", 242);

@@ -1,1 +1,1 @@
-init_setup("Russian Federation", 86)
+init_setup("Russian Federation", 86);

@@ -1,1 +1,1 @@
-init_setup("Svalbard and Jan Mayen", 2)
+init_setup("Svalbard and Jan Mayen", 2);

@@ -1,1 +1,1 @@
-init_setup("Syria", 3)
+init_setup("Syria", 3);
