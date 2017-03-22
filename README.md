@@ -25,3 +25,5 @@ Extension icon from: https://material.io/icons/
 Current flag icons from: http://icondrawer.com/free.php.
 
 Polyfill library added for Chrome support: https://github.com/mozilla/webextension-polyfill
+
+web-ext used for build: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext
