@@ -52,7 +52,7 @@ for directory in sorted(os.listdir(master_directory)):
 
         html_page.write("\t\t<meta charset=\"UTF-8\">\n")
         html_page.write("\t\t<link rel=\"stylesheet\" href=\"/CSS/FlagIt.css\"/>\n")
-        html_page.write("\t\t<script type=\"application/javascript\" src=\"/Scripts/browser-polyfill.js\"></script>\n")
+
         #Setup script - for handlers
         html_page.write("\t\t<script type=\"text/javascript\" src=\"/Scripts/FlagIt.js\"></script>\n")
         html_page.write("\t</head>\n\n")
@@ -114,13 +114,13 @@ for directory in sorted(os.listdir(master_directory)):
 
         #Back
         if (dirname != "World Flags"):
-            html_page.write("\n\t\t<p><a class=\"back\" href={0}_Contents.html>Back</a>".format(firstchar))
+            html_page.write("\n\t\t<p><a class=\"back\" href={0}_Contents.html>Back</a></p>".format(firstchar))
         else:
-            html_page.write("\n\t\t<p><a class=\"back\" href=/Window/FlagIt.html>Back</a>")
+            html_page.write("\n\t\t<p><a class=\"back\" href=/Window/FlagIt.html>Back</a></p>")
 
         #Setup script - initialises setup defined in FlagIt.js
         #Will need to be generated alongside HTML
-        html_page.write("\t\t<script type=\"text/javascript\" src=\"/Scripts/{0}.js\"></script>\n".format(dirname))
+        html_page.write("\n\t\t<script type=\"text/javascript\" src=\"/Scripts/{0}.js\"></script>\n".format(dirname))
 
         #Body end
         html_page.write("\t</body>\n\n")
