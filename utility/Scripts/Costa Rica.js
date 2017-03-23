@@ -1,1 +1,0 @@
-init_setup("Costa Rica", 8);

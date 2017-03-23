@@ -1,1 +1,0 @@
-init_setup("Sri Lanka", 10);

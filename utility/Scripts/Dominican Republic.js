@@ -1,1 +1,0 @@
-init_setup("Dominican Republic", 16);

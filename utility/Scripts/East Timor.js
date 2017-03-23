@@ -1,1 +1,0 @@
-init_setup("East Timor", 14);

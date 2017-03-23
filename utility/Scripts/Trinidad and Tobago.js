@@ -1,1 +1,0 @@
-init_setup("Trinidad and Tobago", 15);

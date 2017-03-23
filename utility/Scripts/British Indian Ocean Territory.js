@@ -1,1 +1,0 @@
-init_setup("British Indian Ocean Territory", 2);

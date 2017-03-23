@@ -1,1 +1,0 @@
-init_setup("United States Minor Outlying Islands", 10);

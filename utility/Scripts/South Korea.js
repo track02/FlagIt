@@ -1,1 +1,0 @@
-init_setup("South Korea", 18);

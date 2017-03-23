@@ -1,1 +1,0 @@
-init_setup("Germany", 17);

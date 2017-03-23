@@ -1,1 +1,0 @@
-init_setup("Marshall Islands", 8);
