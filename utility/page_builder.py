@@ -8,6 +8,9 @@ import os;
 #Vars
 cells_per_row = 6
 master_directory = sys.argv[1] #Second parameter is directory to process
+chrome_build = (sys.argv[2].lower() == "true") #Third parameters flags whether to build for chrome -> include polyfill library
+
+
 
 
 #Alphabetical dictionary used to build content pages
@@ -55,6 +58,10 @@ for directory in sorted(os.listdir(master_directory)):
 
         #Setup script - for handlers
         html_page.write("\t\t<script type=\"text/javascript\" src=\"/Scripts/FlagIt.js\"></script>\n")
+		#If chrome build then include polyfill script
+        if (chrome_build):
+            html_page.write("\t\t<script type=\"text/javascript\" src=\"/Chrome_Polyfill/browser-polyfill.js\"></script>\n")
+		
         html_page.write("\t</head>\n\n")
         #Body start
         html_page.write("\t<body>\n")
