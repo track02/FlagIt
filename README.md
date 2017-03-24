@@ -5,7 +5,7 @@ A simple web extension checklist for flag collectors.
 
 ## Building
 
-Run the firefox/chrome build scripts located inside the Builder folder, this will create a new directory with the needed files and package the contents (if web-ext is installed).
+Run the firefox/chrome build scripts located inside the Builder folder, this will create a new directory with the needed files and package the contents, web-ext is required. Windows only at the moment
 
 ## Installation
 
