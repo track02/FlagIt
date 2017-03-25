@@ -1,0 +1,1 @@
+init_setup("Uzbekistan", 4);

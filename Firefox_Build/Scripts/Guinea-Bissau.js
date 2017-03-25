@@ -1,0 +1,1 @@
+init_setup("Guinea-Bissau", 5);

@@ -4,5 +4,5 @@ xcopy Scripts\*.* ..\Firefox_Build\Scripts
 xcopy Build_Resources ..\Firefox_Build\ /E /Y
 xcopy Firefox_Resources ..\Firefox_Build\ /E /Y
 cd ..\Firefox_Build\
-web-ext 
+web-ext build
 pause

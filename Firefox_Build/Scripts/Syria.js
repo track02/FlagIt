@@ -1,0 +1,1 @@
+init_setup("Syria", 3);

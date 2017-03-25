@@ -1,0 +1,1 @@
+init_setup("French Polynesia", 6);
