@@ -30,6 +30,16 @@ Optimisations:
 - further image compression, extracting only when needed
 - world map with toggling countries
 
+### Updating check arrays
+
+Need to store more information to allow for automated updates when flags are added or taken array.
+
+Update to array of pairs [<Country Name> <0/1>] - loop over all td elements and extract id, pair these up with existing array values and store.
+
+#### Update current script to overwrite old check arrays with check pairs, map td id's to stored check values
+
+#### When a size difference is found, pull out stored pairs from previous version and generate a new set of pairs (mapped to zero), loop over old pairs and copy check value into new set. When finished overwrite the old set with the new set that has been populated. 
+
 
 ## Other
 
