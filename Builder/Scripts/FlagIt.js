@@ -25,12 +25,12 @@ function init_setup(array_name, array_size){
 		target = event.target; //Retrieve image that has been clicked
 		parent = target.parentElement;
 
-		index = (event.target.id ) - 1;
-		value = 0;
+		index = parent.id;
+		value = false;
 
 		if(parent.className == "missing"){
 		  parent.className = "found"
-		  value = 1;
+		  value = true;
 		}else {
 		  parent.className = "missing"
 		}
@@ -54,14 +54,28 @@ function init_setup(array_name, array_size){
 	//If so, then a new empty array is created and stored in local
 	//Otherwise, the check array is extracted from the check object
 	//setupTable is then called with the check-array
-	function setup(check_obj) {
+function setup(check_obj) {
 
-	  //Empty check object or length difference
-	  if(isEmpty(check_obj) || check_obj[array_name].length != array_size){
-		//Generate empty array and attempty store it at check_array
-		//console.log("Blank Table Added of size " + array_size);
-		//console.log("Table added with name: " + array_name);
-		var blank_array = new Array(array_size).fill(0);
+	//Empty check object or length difference
+	if(isEmpty(check_obj)){
+		//Generate empty array of blank arrayss
+		var blank_array = {};
+		console.log("Empty array built");
+		console.log(blank_array);
+
+		//mapping of country_name -> 0
+		//Iterate over all td elements and extract id's
+		var flag_table = document.getElementById("flag-table");
+		var flag_cells = flag_table.getElementsByTagName("td");
+
+		for(var i = 0; i < flag_cells.length; i++){
+			blank_array[flag_cells[i].id] = false;
+		}
+
+		console.log("Populated");
+		console.log(blank_array);
+
+		//Map array to provided array name (country name)
 		var obj = {};
 		obj[array_name] = blank_array;
 		let set = browser.storage.local.set(obj);
@@ -71,17 +85,83 @@ function init_setup(array_name, array_size){
 
 		//Bind event handlers and set correct class using the blank_array
 		setupTable(blank_array);
-	  }
-	  //Otherwise we have a results object
-	  else{
+	}
+	else{
 
 		//Pull out already populated array from results_obj
 		check_array = check_obj[array_name];
 
-		//Bind event handlers and set correct class using the populated array
-		setupTable(check_array);
-	  }
+		//One off operation for upgrade from V0.37
+		//Remove in V0.40++
+		//Convert previous 0/1 array into new associate array
+		//Assuming flags have not changed since previous release!
+		if(Array.isArray(check_array)){
+
+			console.log("Updating");
+			console.log(check_array);
+
+			var blank_array = {};
+			//First populate the blank array
+			var flag_table = document.getElementById("flag-table");
+			var flag_cells = flag_table.getElementsByTagName("td");
+
+			for(var i = 0; i < flag_cells.length; i++){
+				blank_array[flag_cells[i].id] = Boolean(check_array[i]);
+			}
+
+			console.log("Done");
+			console.log(blank_array);
+
+			var obj = {};
+			obj[array_name] = blank_array;
+			let set = browser.storage.local.set(obj);
+			//Attempt to store the array
+			set.then();
+
+			//Bind event handlers and set correct class using the populated array
+			setupTable(blank_array);
+		}
+		//Standard operation
+		else{
+
+			console.log("Rebuilding");
+			console.log(check_array);
+
+			//We'll rebuild using current page contents, ensures that flags are up to date
+			var blank_array = {};
+			//First populate the blank array
+			var flag_table = document.getElementById("flag-table");
+			var flag_cells = flag_table.getElementsByTagName("td");
+
+			for(var i = 0; i < flag_cells.length; i++){
+				blank_array[flag_cells[i].id] = false;
+			}
+
+			//Now loop over each key in the old array
+			var keys = Object.keys(check_array)
+			for(var i = 0; i < keys.length; i++){
+
+				if(keys[i] in blank_array){
+					blank_array[keys[i]] = check_array[keys[i]];
+				}else{
+						console.log("Key no longer present");
+						console.log(keys[i]);
+				}
+			}
+
+			console.log(blank_array);
+
+			var obj = {};
+			obj[array_name] = blank_array;
+			let set = browser.storage.local.set(obj);
+			//Attempt to store the array
+			set.then();
+
+			//Bind event handlers and set correct class using the populated array
+			setupTable(blank_array);
+		}
 	}
+}
 
 	//Binds onhover and onclick event handlers to each img in the table
 	//Sets correct class to cells (missing / found)
@@ -112,11 +192,11 @@ function init_setup(array_name, array_size){
 		  //Determine class type
 		  //0 -> missing
 		  //1 -> found
-		  if(check_array[img_no] == 0){
-			flag_cells[i].className = "missing";
+		  if(check_array[flag_cells[i].id]){
+			flag_cells[i].className = "found";
 		  }
 		  else{
-			  flag_cells[i].className = "found";
+			  flag_cells[i].className = "missing";
 		  }
 	  }
 	}
