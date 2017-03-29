@@ -5,17 +5,17 @@
 *Binds onclick and onhover event handlers to each flag image
 */
 
-function init_setup(array_name, array_size){
+function init_setup(country_name, country_regions){
 
 	//Begin by retrieving the check array promise
-	var check_promise = browser.storage.local.get(array_name);
+	var check_promise = browser.storage.local.get(country_name);
 
-	//Resolve the promise, if check array is retrieved then begin setup
+	//Resolve the promise, process check array and setup page
 	check_promise.then(setup);
 
   /*-------------------Function Defs----------------------*/
   //close functions inside init_setup giving them access 
-  //to initial parameters (array_name, array_size)
+  //to initial parameters (country_name, country_regions)
 
 	//Event handler for onclick
 	//Swaps the className of the parent cell to toggle transparency
@@ -25,7 +25,7 @@ function init_setup(array_name, array_size){
 		target = event.target; //Retrieve image that has been clicked
 		parent = target.parentElement;
 
-		index = parent.id; //The index to update is found by examining the parent id (country/county name)
+		index = parent.id; //The index to update is found by examining the parent id (region name)
 		value = false;
 
 		if(parent.className == "missing"){
@@ -36,14 +36,15 @@ function init_setup(array_name, array_size){
 		}
 
 		//Write this to the check array
-		var result_promise = browser.storage.local.get(array_name);
+		var result_promise = browser.storage.local.get(country_name);
 		result_promise.then(updateResults);
 
 		//Update check array - closed inside checkHandler, allows value to be used in update process
+		//Closed within checkHandler, has access to the required value 
 		function updateResults(check_obj){
 
 		  //When item is retrieved update it using the index and value
-		  check_obj[array_name][index] = value;
+		  check_obj[country_name][index] = value;
 
 		  let set = browser.storage.local.set(check_obj);
 		  set.then();
@@ -72,7 +73,7 @@ function init_setup(array_name, array_size){
 			
 			//Assign the mapping to provided name (country name)
 			var obj = {};
-			obj[array_name] = blank_mapping;
+			obj[country_name] = blank_mapping;
 			let set = browser.storage.local.set(obj);
 
 			//Attempt to store the array
@@ -84,16 +85,13 @@ function init_setup(array_name, array_size){
 		else{
 
 			//Pull out already populated array from results_obj
-			check_mapping = check_obj[array_name];
+			check_mapping = check_obj[country_name];
 
 			//One off operation for upgrade from V0.37
 			//Remove in V0.40++
 			//Convert previous 0/1 array into new associative array
 			//Then rebuild using latest flags
 			if(Array.isArray(check_mapping)){
-
-				console.log("Updating");
-				console.log(check_mapping);
 
 				var blank_mapping = {};
 				//First populate the blank array
@@ -104,57 +102,44 @@ function init_setup(array_name, array_size){
 					blank_mapping[flag_cells[i].id] = Boolean(check_mapping[i]);
 				}
 
-				console.log("Done");
-				console.log(blank_mapping);
-				
 				//Overwrite old array with new map
 				//Carry on with rebuild as normal
 				check_mapping = blank_mapping;
-
 			}
 
-				console.log("Rebuilding");
-				console.log(check_mapping);
+			//We'll rebuild using current page contents, ensures that flags are up to date
+			var blank_mapping = {};
+			//First populate the blank array
+			var flag_table = document.getElementById("flag-table");
+			var flag_cells = flag_table.getElementsByTagName("td");
 
-				//We'll rebuild using current page contents, ensures that flags are up to date
-				var blank_mapping = {};
-				//First populate the blank array
-				var flag_table = document.getElementById("flag-table");
-				var flag_cells = flag_table.getElementsByTagName("td");
+			for(var i = 0; i < flag_cells.length; i++){
+				blank_mapping[flag_cells[i].id] = false;
+			}
 
-				for(var i = 0; i < flag_cells.length; i++){
-					blank_mapping[flag_cells[i].id] = false;
+			//Now loop over each key in the old array
+			var keys = Object.keys(check_mapping)
+			for(var i = 0; i < keys.length; i++){
+
+				if(keys[i] in blank_mapping){
+					blank_mapping[keys[i]] = check_mapping[keys[i]];
 				}
+			}
 
-				//Now loop over each key in the old array
-				var keys = Object.keys(check_mapping)
-				for(var i = 0; i < keys.length; i++){
+			var obj = {};
+			obj[country_name] = blank_mapping;
+			let set = browser.storage.local.set(obj);
+			//Attempt to store the array
+			set.then();
 
-					if(keys[i] in blank_mapping){
-						blank_mapping[keys[i]] = check_mapping[keys[i]];
-					}else{
-							console.log("Key no longer present");
-							console.log(keys[i]);
-					}
-				}
-
-				console.log(blank_mapping);
-
-				var obj = {};
-				obj[array_name] = blank_mapping;
-				let set = browser.storage.local.set(obj);
-				//Attempt to store the array
-				set.then();
-
-				//Bind event handlers and set correct class using the populated array
-				setupTable(blank_mapping);
-			
+			//Bind event handlers and set correct class using the populated array
+			setupTable(blank_mapping);			
 		}
 	}
 
 	//Binds onhover and onclick event handlers to each img in the table
 	//Sets correct class to cells (missing / found)
-	function setupTable(check_array){
+	function setupTable(check_mapping){
 
 	  //Extract table and cells
 	  var flag_table = document.getElementById("flag-table");
@@ -181,7 +166,7 @@ function init_setup(array_name, array_size){
 		  //Determine class type
 		  //0 -> missing
 		  //1 -> found
-		  if(check_array[flag_cells[i].id]){
+		  if(check_mapping[flag_cells[i].id]){
 			flag_cells[i].className = "found";
 		  }
 		  else{
@@ -201,5 +186,4 @@ function init_setup(array_name, array_size){
 	function isEmpty(obj){
 		return (Object.getOwnPropertyNames(obj).length === 0);
 	}
-
 }
