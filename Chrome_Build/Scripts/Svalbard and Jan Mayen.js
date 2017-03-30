@@ -1,0 +1,1 @@
+init_setup("Svalbard and Jan Mayen", 2);

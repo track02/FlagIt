@@ -1,0 +1,1 @@
+init_setup("Sweden", 22);

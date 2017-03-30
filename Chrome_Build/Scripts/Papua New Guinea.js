@@ -1,0 +1,1 @@
+init_setup("Papua New Guinea", 23);

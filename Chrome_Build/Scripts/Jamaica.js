@@ -1,0 +1,1 @@
+init_setup("Jamaica", 15);
