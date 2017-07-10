@@ -1,0 +1,1 @@
+init_setup("Mauritius", 11);

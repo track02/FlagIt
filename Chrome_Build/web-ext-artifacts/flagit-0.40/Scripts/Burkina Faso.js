@@ -1,0 +1,1 @@
+init_setup("Burkina Faso", 2);

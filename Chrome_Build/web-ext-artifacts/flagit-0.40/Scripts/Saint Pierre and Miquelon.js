@@ -1,0 +1,1 @@
+init_setup("Saint Pierre and Miquelon", 3);

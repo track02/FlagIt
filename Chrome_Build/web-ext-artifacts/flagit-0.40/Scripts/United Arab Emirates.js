@@ -1,0 +1,1 @@
+init_setup("United Arab Emirates", 8);

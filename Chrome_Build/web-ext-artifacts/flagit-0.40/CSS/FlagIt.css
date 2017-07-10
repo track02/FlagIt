@@ -1,0 +1,56 @@
+body{
+  overflow-y:auto;
+  min-width:300px;
+  background-color: #FFFFFF;
+}
+
+img{
+  z-index:5;
+  border: 1px solid white;
+}
+
+img:hover {
+  border: 1px solid #CFEEF6; 
+}
+
+h2{
+  color: #E74B48;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: monospace;
+
+}
+
+h3{
+  color: #57CBFF;
+  text-shadow: 1px 1px 1px #ccc;
+  font-family: monospace;
+
+}
+
+a{
+  font-family: monospace;
+  text-shadow: 1px 1px 1px #ccc;
+  color: #2273AA ;
+  text-decoration: none;
+}
+
+table{
+  margin: 0px auto;
+}
+
+.missing {
+  opacity: 0.20;
+}
+
+.found{
+  opacity: 1.0;
+}
+
+#hover_text{
+  font-family: monospace;
+  text-shadow: 1px 1px 1px #ccc;
+  color: #263650 ;
+  text-decoration: none;
+  text-align: center;
+}

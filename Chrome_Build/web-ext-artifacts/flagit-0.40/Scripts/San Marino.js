@@ -1,0 +1,1 @@
+init_setup("San Marino", 10);

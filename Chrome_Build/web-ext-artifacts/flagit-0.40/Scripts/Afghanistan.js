@@ -1,0 +1,1 @@
+init_setup("Afghanistan", 16);

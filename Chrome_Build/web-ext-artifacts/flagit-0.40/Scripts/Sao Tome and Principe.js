@@ -1,0 +1,1 @@
+init_setup("Sao Tome and Principe", 2);

@@ -1,0 +1,1 @@
+init_setup("Cambodia", 2);
