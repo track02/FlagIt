@@ -17,9 +17,7 @@ New versions will be downloaded automatically as add-on updates. Currently V0.39
 
 ### Chromium
 
-Note: This release is outdated and does not include regional flags.
-
-Use the .crx file in the Chromium folder and drag onto browser addons page.
+Only available via repo - download and load the Chrome Build folder as an addon
 
 
 ## TODO
