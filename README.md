@@ -1,7 +1,11 @@
 # FlagIt
 
-A simple web extension checklist for flag collectors.
+A simple web extension checklist for flag collectors, provides the following features:
 
+- World Flags
+- Regional Flags for individual countries
+- Simple to use interface, one-click toggling
+- Persistent flag tracking, progress stored by browser
 
 ## Building
 
@@ -17,13 +21,14 @@ New versions will be downloaded automatically as add-on updates. Currently V0.39
 
 ### Chromium
 
-Only available via repo - download and load the Chrome Build folder as an addon
+Only available via repo - download and load the manifest inside the Chrome Build folder.
 
 
 ## TODO
 - Investigate chrome packaging process - stripping polyfill?
 - loading images from external source (e.g. this github page) instead of bundling with addon
 - world map with toggling countries
+- total counter for each page / percentage for collected flags
 
 
 ## Other
