@@ -17,7 +17,7 @@ Run the firefox/chrome build scripts located inside the Builder folder, this wil
 
 Add to firefox from Mozilla's add-on site: https://addons.mozilla.org/en-GB/firefox/addon/flag_it/?src=ss
 
-New versions will be downloaded automatically as add-on updates. Currently V0.39
+New versions will be downloaded automatically as add-on updates. Currently V0.40
 
 ### Chromium
 
