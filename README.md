@@ -24,8 +24,8 @@ New versions will be downloaded automatically as add-on updates. Currently V0.40
 Only available via repo - download and load the manifest inside the Chrome Build folder.
 
 
-## TODO
-- Investigate chrome packaging process - stripping polyfill?
+## Potential Future Improvements
+- CSS / Layout revamp
 - loading images from external source (e.g. this github page) instead of bundling with addon
 - world map with toggling countries
 - total counter for each page / percentage for collected flags
