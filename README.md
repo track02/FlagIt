@@ -33,10 +33,12 @@ Only available via repo - download and load the manifest inside the Chrome Build
 
 ## Other
 
-Extension icon from: https://material.io/icons/
+Extension icon: https://material.io/icons/
 
-Current flag icons from: http://icondrawer.com/free.php.
+Current world flag icons: http://icondrawer.com/free.php.
 
-Polyfill library added for Chrome support: https://github.com/mozilla/webextension-polyfill
+County / Regional icons: https://github.com/flaghunters/Extra-Flags-for-4chan
+
+Polyfill library for Chrome support: https://github.com/mozilla/webextension-polyfill
 
 web-ext used for automating build: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext
