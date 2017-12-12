@@ -10,29 +10,26 @@ img{
 }
 
 img:hover {
-  border: 1px solid #CFEEF6; 
+  border: 1px solid #FFFFFF; 
 }
 
 h2{
-  color: #E74B48;
+  color: #0A6187;
   text-decoration: underline;
-  text-shadow: 1px 1px 1px #ccc;
-  font-family: monospace;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 
 }
 
 h3{
-  color: #57CBFF;
-  text-shadow: 1px 1px 1px #ccc;
-  font-family: monospace;
+  color: #0A6187;  
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 
 }
 
 a{
-  font-family: monospace;
-  text-shadow: 1px 1px 1px #ccc;
-  color: #2273AA ;
-  text-decoration: none;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  color: #F25944;
+  text-decoration: underline;
 }
 
 table{
@@ -49,8 +46,7 @@ table{
 
 #hover_text{
   font-family: monospace;
-  text-shadow: 1px 1px 1px #ccc;
-  color: #263650 ;
+  color: #263650;
   text-decoration: none;
   text-align: center;
 }
