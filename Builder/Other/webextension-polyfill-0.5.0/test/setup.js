@@ -13,7 +13,13 @@ if (process.env.ENABLE_JSDOM_CONSOLE == "y") {
 
 // Path to the browser-polyfill script, relative to the current work dir
 // where mocha is executed.
-const BROWSER_POLYFILL_PATH = "./dist/browser-polyfill.js";
+let BROWSER_POLYFILL_PATH = "./dist/browser-polyfill.js";
+
+if (process.env.TEST_MINIFIED_POLYFILL) {
+  BROWSER_POLYFILL_PATH = "./dist/browser-polyfill.min.js";
+} else if (process.env.TEST_BUNDLED_POLYFILL) {
+  BROWSER_POLYFILL_PATH = process.env.TEST_BUNDLED_POLYFILL;
+}
 
 // Create the jsdom window used to run the tests
 const testDOMWindow = jsdom("", {virtualConsole}).defaultView;
@@ -31,16 +37,29 @@ function setupTestDOMWindow(chromeObject, browserObject = undefined) {
   return new Promise((resolve, reject) => {
     const window = testDOMWindow;
 
+    // Ensure that "chrome.runtime.id" is set, because the polyfill is only
+    // loaded in extension environments.
+    if (chromeObject) {
+      if (!chromeObject.runtime) {
+        chromeObject.runtime = {};
+      }
+      if (!chromeObject.runtime.id) {
+        chromeObject.runtime.id = "some-test-id-from-test-setup";
+      }
+    }
+
     // Inject the fake chrome object used as a fixture for the particular
     // browser-polyfill test scenario.
     window.chrome = chromeObject;
 
     // Set (or reset) the browser property.
     if (browserObject) {
-      window.browser = browserObject;
+      // Make the fake browser object a `window.Object` instance, so that
+      // it passes the `Object.getPrototypeOf(browser) !== Object.prototype`
+      // check, otherwise it is going to be overridden by the polyfill (See #153).
+      window.browser = Object.assign(window.Object(), browserObject);
     } else {
-      // TODO: change into `delete window.browser` once tmpvar/jsdom#1622 has been fixed.
-      window.browser = undefined;
+      delete window.browser;
     }
 
     const scriptEl = window.document.createElement("script");
